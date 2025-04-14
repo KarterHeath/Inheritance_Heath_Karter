@@ -2,27 +2,27 @@
 
 namespace Inheritance_Heath_Karter
 {
-    class Game : IGenre
+    // Abstract class Game
+    public abstract class Game
     {
+        // Automatic properties
         public string ESRB { get; set; }
-        public string Genre { get; set; }
         public string Title { get; set; }
 
-        public Game(string genre, string esrb, string title)
+        // Constructor to initialize ESRB and Title
+        public Game(string esrb, string title)
         {
-            Genre = genre;
             ESRB = esrb;
             Title = title;
         }
 
+        // Concrete method that prints a starting message using the Title property
         public void PlayGame()
         {
-            Console.WriteLine("Game is Starting");
+            Console.WriteLine($"{Title} is Starting");
         }
 
-        public string Describe()
-        {
-            return $"Game Title: {Title}, Genre: {Genre}, ESRB Rating: {ESRB}";
-        }
+        // Abstract method that must be overridden in derived classes
+        public abstract string Describe();
     }
 }

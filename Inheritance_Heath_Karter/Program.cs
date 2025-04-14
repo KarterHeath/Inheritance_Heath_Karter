@@ -6,18 +6,16 @@ namespace Inheritance_Heath_Karter
     {
         static void Main(string[] args)
         {
-            // Create a Game object
-            Game myGame = new Game("Adventure", "E10+", "Quest Runner");
-            Console.WriteLine(myGame.Describe());
-            myGame.PlayGame();
+            // Create an FPS game object and pass in the title and ESRB rating
+            FPS myFPSGame = new FPS("M", "Call of Battle");
 
-            Console.WriteLine();
+            // Call Describe and print the result
+            Console.WriteLine(myFPSGame.Describe());
 
-            // Create a Movie object
-            Movie myMovie = new Movie("Sci-Fi", "PG-13", "Galactic Voyage");
-            Console.WriteLine(myMovie.Describe());
-            myMovie.PlayMovie();
+            // Start the game
+            myFPSGame.PlayGame();
 
+            // Pause the console so it stays open
             Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();
         }
